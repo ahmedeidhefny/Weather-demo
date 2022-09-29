@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Weather-demo</string>
+    <string name="label_welcome">Welcome</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="network_failure">Network Failure</string>
+    <string name="conversion_error">Conversion Error</string>
+    <string name="apikey_error">API key is invalid or not provided.</string>
+
+    <string name="label_temp">°F</string>
+    <string name="label_mph">mph</string>
+    <string name="label_per">%</string>
+
+    <string name="label_today">Today</string>
+    <string name="label_tomorrow">Tomorrow</string>
+
+    <string name="no_search_results_found">No Results Found</string>
+    <string name="search_hint">Search City</string>
+
+
+</resources>

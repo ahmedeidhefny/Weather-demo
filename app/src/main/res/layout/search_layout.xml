@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/lyt_visible_search"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:elevation="@dimen/spacing_large"
+    android:background="@drawable/search_lyt_background"
+    android:visibility="gone"
+    tools:context=".ui.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/lyt_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/spacing_middle"
+            android:src="@drawable/ic_arrow"
+            android:contentDescription="TODO" />
+
+        <include
+            android:id="@+id/search_box_container"
+            layout="@layout/search_header_layout" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/lyt_box"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_search" />
+
+    <TextView
+        android:id="@+id/no_search_results_found_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_search_results_found"
+        android:textSize="@dimen/font_size_normal"
+        android:visibility="gone"
+        android:padding="@dimen/spacing_large"
+        app:layout_constraintBottom_toTopOf="@id/search_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_list"
+        android:layout_marginBottom="@dimen/spacing_mlarge"/>
+
+    <RelativeLayout
+        android:id="@+id/lyt_btm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_background"
+        android:padding="@dimen/spacing_xmedium"
+        android:layout_marginTop="@dimen/spacing_mlarge"
+        app:layout_constraintTop_toBottomOf="@id/search_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_up"
+            android:contentDescription="TODO" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

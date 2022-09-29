@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/rootLayout"
+    tools:context=".ui.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/search_container"
+            layout="@layout/search_layout" />
+
+        <LinearLayout
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/spacing_xlarge"/>
+        </LinearLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@drawable/background_image">
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="center"
+               android:layout_centerHorizontal="true"
+               android:src="@color/colorBackground"
+               tools:ignore="ContentDescription"
+               android:contentDescription="TODO" />
+       </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/spacing_xlarge"
+            tools:ignore="ContentDescription"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_semibold"
+            android:gravity="center"
+            tools:text="9:12 AM"
+            android:textColor="@color/white"
+            android:padding="@dimen/spacing_xlarge"
+            android:textSize="@dimen/font_size_medium"
+            app:layout_constraintEnd_toStartOf="@+id/btn_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/sfpro_bold"
+            android:gravity="center"
+            tools:text="San Francisco"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_xxxlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_regular"
+            android:gravity="center"
+            tools:text="Tuesday, 12 Apr 2022"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCityName" />
+
+        <ImageView
+            android:id="@+id/iv_currentDayIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/_70sdp"
+            tools:src="@drawable/ic_sunny"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            android:contentDescription="TODO" />
+
+        <LinearLayout
+            android:id="@+id/lytTemperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_currentDayIcon">
+
+            <TextView
+                android:id="@+id/tvTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfpro_bold"
+                android:gravity="center"
+                tools:text="82.4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_xxxxlarge" />
+
+            <TextView
+                android:id="@+id/tvF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfpro_thin2"
+                android:gravity="center"
+                android:text="@string/label_temp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_xxxxlarge" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:fontFamily="@font/sfpro_medium"
+            android:gravity="center"
+            tools:text="It’s a sunny day. "
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lytTemperature" />
+
+        <LinearLayout
+            android:id="@+id/lytWind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCondition">
+
+            <TextView
+                android:id="@+id/tvWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_wind"
+                android:drawablePadding="@dimen/spacing_xmedium"
+                android:layout_marginEnd="@dimen/spacing_mlarge"
+                android:fontFamily="@font/sfpro_regular"
+                android:gravity="center"
+                tools:text="3 mph"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_medium"
+                tools:ignore="RtlCompat" />
+
+
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_humidity"
+                android:drawablePadding="@dimen/spacing_xmedium"
+                android:fontFamily="@font/sfpro_regular"
+                android:gravity="center"
+                tools:text="60%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_medium"
+                tools:ignore="RtlCompat" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/spacing_large"
+            >
+            <LinearLayout
+                android:id="@+id/lyt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_mlarge"
+                android:orientation="vertical"
+                tools:ignore="RtlCompat">
+
+                <ImageView
+                    android:id="@+id/iv_dayIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    tools:src="@drawable/ic_sunny"
+                    android:contentDescription="TODO" />
+
+
+                <TextView
+                    android:id="@+id/tvTemperatureMinMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_regular"
+                    tools:text="82.4°/86°F"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_medium" />
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_medium"
+                    tools:text="Today"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_normal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_mlarge"
+                android:orientation="vertical"
+                tools:ignore="RtlCompat">
+
+                <ImageView
+                    android:id="@+id/iv_dayIcon2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    tools:src="@drawable/ic_sunny"
+                    android:contentDescription="TODO" />
+
+
+                <TextView
+                    android:id="@+id/tvTemperatureMinMax2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_regular"
+                    tools:text="82.4°/86°F"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_medium" />
+
+                <TextView
+                    android:id="@+id/tvDay2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_medium"
+                    tools:text="Today"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_normal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_dayIcon3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    tools:src="@drawable/ic_sunny"
+                    android:contentDescription="TODO" />
+
+
+                <TextView
+                    android:id="@+id/tvTemperatureMinMax3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_regular"
+                    tools:text="82.4°/86°F"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_medium" />
+
+                <TextView
+                    android:id="@+id/tvDay3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/sfpro_medium"
+                    tools:text="Today"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_normal" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
