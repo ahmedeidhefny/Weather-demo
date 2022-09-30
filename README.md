@@ -15,4 +15,4 @@ An Android App where you can check weather from city you want  and see forecast 
 9- Dagger-Hilt  
 
 
-<img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/weather-home.png" width="270" height="580"> <img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/city-search.png" width="270" height="580"> <img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/ciity-search%20results.png" width="270" height="580">  
+<img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/weather-home.png" width="270" height="580">   <img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/city-search.png" width="270" height="580">   <img src="https://github.com/ahmedeidhefny/Weather-demo/blob/master/ciity-search%20results.png" width="270" height="580">  
